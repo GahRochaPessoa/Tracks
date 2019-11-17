@@ -5,16 +5,20 @@ import React, { useContext } from 'react';
 import {
   View, StyleSheet, Text, TouchableOpacity,
 } from 'react-native';
+import { NavigationEvents } from 'react-navigation';
 import SignupScreen from './SignupScreen';
 import AuthForm from '../components/AuthForm';
 import { Context } from '../context/AuthContext';
 
 
 const SigninScreen = ({ navigation }) => {
-  const { state, signin } = useContext(Context);
+  const { state, signin, clearErrorMessage } = useContext(Context);
 
   return (
     <View style={styles.container}>
+      <NavigationEvents
+        onWillBlur={clearErrorMessage}
+      />
       <Text>SigninScreen</Text>
       <AuthForm
         errorMessage={state.errorMessage}
