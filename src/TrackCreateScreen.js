@@ -3,11 +3,13 @@
 /* eslint-disable react/jsx-filename-extension */
 import React from 'react';
 import { View, StyleSheet, Text } from 'react-native';
+import Map from '../components/map';
 
 
 const TrackCreateScreen = () => (
   <View style={styles.container}>
     <Text>TrackCreateScreen</Text>
+    <Map />
   </View>
 );
 
